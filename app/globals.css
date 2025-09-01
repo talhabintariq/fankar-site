@@ -41,6 +41,14 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom gradient colors */
+  --color-ink-900: #0f172a;
+  --color-ink-800: #16213e;
+  --color-ink-700: #1b2a52;
+  --color-aurora-500: #586290;
+  --color-aurora-400: #4a5a75;
+  --color-aurora-300: #6b7ab2;
 }
 
 :root {
@@ -119,4 +127,30 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* 3D utility classes for enhanced visual effects */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.06),
+    0 6px 6px rgba(0,0,0,0.08);
+}
+
+/* Custom navigation menu trigger styles to override shadcn defaults */
+.navbar-trigger {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+}
+
+.navbar-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.navbar-trigger[data-state="open"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
